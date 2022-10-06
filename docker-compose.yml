@@ -1,15 +1,15 @@
 version: '3'
 services:
-	jenkins:
-		container_name: jenkins
-		image:pgrs/jenkins:latest
-		ports:
-			- "8008:8008"
-		volumes:
-			- "/root/jenkins:/var/jenkins_home"
-		networks:
-		 - net
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins:lts
+    ports:
+      - "8008:8008"
+    volumes:
+      - "/root/jenkins/jenkins_data:/var/jenkins_home"
+    networks:
+      - net
 networks:
-	net:
+  net:
 
 #chown 1000:1000 jenkins_home -R   this will give ownership permission to jenkins user to access this folder
