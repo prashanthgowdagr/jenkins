@@ -1,3 +1,5 @@
+#docker-compose file for Jenkins and remote-host(has Docker file)
+
 version: '3'
 services:
   jenkins:
