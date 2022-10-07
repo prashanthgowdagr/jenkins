@@ -5,7 +5,7 @@ RUN apt update && apt install  openssh-server sudo -y
 RUN adduser remote-user && \
     echo "remote-user:test" | chpasswd && \
     mkdir /home/remote-user/.ssh && \
-    chmod 700 /home/remote-user/.ssh
+    chmod 600 /home/remote-user/.ssh
 
 COPY remote-key.pub /home/remote-user/.ssh/authorized_keys
 
