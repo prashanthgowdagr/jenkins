@@ -6,17 +6,19 @@ services:
     ports:
       - 8080:8080
       - 50000:50000
+    privileged: true
+    user: root
     volumes:
       - /root/jenkins/jenkins_data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - net
-   remote-host:
+  remote-host:
     container_name: remote-host
     image: remote-host
     build:
      context: ubuntu
-     networks:
+    networks:
        - net
 networks:
   net:
