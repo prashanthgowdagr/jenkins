@@ -5,7 +5,7 @@ RUN apt update && apt install  openssh-server sudo -y
 RUN adduser jenkins && \
     echo "jenkins:test" | chpasswd && \
     mkdir /home/jenkins/.ssh && \
-    chmod 600 /home/jenkins/.ssh
+    chmod 700 /home/jenkins/.ssh
 
 COPY remote-key.pub /home/jenkins/.ssh/authorized_keys
 
