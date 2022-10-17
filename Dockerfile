@@ -7,7 +7,7 @@ RUN adduser jenkins && \
     mkdir /home/jenkins/.ssh && \
     chmod 700 /home/jenkins/.ssh
 
-COPY remote-key.pub /home/jenkins/.ssh/authorized_keys
+COPY keygen.pub /home/jenkins/.ssh/authorized_keys
 
 RUN chown jenkins:jenkins -R /home/jenkins/.ssh/ && \
     chmod 600 /home/jenkins/.ssh/authorized_keys
