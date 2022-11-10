@@ -19,15 +19,17 @@ RUN service ssh start
 CMD ["/usr/sbin/sshd","-D"]
 
 
-
+#******************************************************#
+#Below steps is w.r.t Jenkins container
 #1.  connect to jenkins container as root: docker exec -it -u root jenkins /bin/bash
 
 #2. go to /tmp and change permissions of the remote-key file:  chown jenkins:jenkins remote-key
 
+#In HOST
 # ssh-keygen -f remote-ki -m PEM
 #docker exec -u root jenkins bash -c "chown 1000:1000 /tmp/remote-ki" (((OR jenkins:jenkins)))
 
-You could also see errors related to sshd-keygen. If so, just change this line from :
+#You could also see errors related to sshd-keygen. If so, just change this line from :
 
 #RUN /usr/sbin/sshd-keygen
 #to
